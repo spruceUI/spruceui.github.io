@@ -1,0 +1,12 @@
+spruceOS website © 2024 by 369px and spruceOS is licensed under CC BY-NC 4.0 
+
+Additional Clauses for Code Usage:
+
+1. Mandatory Attribution:
+A visible attribution is required, linking directly to the original project’s official page.
+
+2. Authorization for Commercial or Proprietary Use:
+Any use of the code in commercial or proprietary projects (including free projects with in-app purchases, freemium, or paid versions) requires written permission from the author. Contact the author at: "eraldxhakoj [at] gmail [dot] com" for authorization requests.
+
+3. Modifications for Non-Commercial Projects:
+Modifications to the code are allowed in non-commercial projects, provided they comply with the attribution requirements and maintain the link to the original project.
