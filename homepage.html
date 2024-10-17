@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>spruceOS Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href=
+"img/logo.png"
+        type="image/x-icon" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+       body, html {
+           position: relative;
+    height: 100%;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #EBDBB2; 
+     background: #282828;
+background: -moz-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 35%, rgba(0,0,0,1) 100%);
+background: -webkit-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 35%, rgba(0,0,0,1) 100%);
+background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 35%, rgba(0,0,0,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1); 
+    overflow-x: hidden;
+}
+
+.page_title {
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    margin-top:3.69%
+}
+
+.additional-content {
+    margin-top: 1%;
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+}
+
+.a30-container {
+    
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: scale(7.69);
+    transform-origin: top center; /* Set scale from the top center */
+    margin-top: 4%; /* Remove any extra margins */
+}
+
+.a30_bg{
+position:absolute;
+    width:28%;
+    height:84%;
+    background-color:#282828;
+}
+
+
+.a30_hardware{
+position:absolute;
+width:auto;
+    height:100%;
+}
+
+
+.a30-display {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 4.2% 0; /* Adjust for padding */
+    transform: scale(0.4); /* Compensate for the outer scale */
+    transform-origin: center; /* Scale from the center */
+    margin-top: -5px;
+}
+
+
+
+        .button, .icon-button {
+    flex: 1 1 20%; /* Fix proportional dimensions (20% for 4 buttons) */
+    max-width: 20%;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-decoration: none;
+    height: 39px;
+    padding-top: 6.9px;
+    color: #7c6f64;
+}
+
+.button:hover, .icon-button:hover {
+    color: #EBDBB2; /*color on hover */
+}
+
+.spruceLogo{
+    position:absolute;
+    opacity: 30%;
+    width:10px;
+    padding: 2px 0 0 1.5px;
+    margin-left: -108px;
+    margin-top: -60px;
+}
+
+.logo-below {
+    position: absolute;
+    display: block;
+    margin: 0 auto; /* Centra l'immagine */
+    width: 9%; /* Regola la dimensione dell'immagine */
+    bottom: 3.69%;
+    left:3.69%;
+    opacity:0.369;
+}
+
+.learn-more-button {
+    background: #282828;
+    border-radius: 3.69px;
+    opacity:0.639;
+    position: absolute;
+    bottom: 3.69%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #EBDBB2;
+    text-decoration: none;
+    padding: 2px;
+}
+
+        .button svg, .icon-button svg {
+    width: 100%;
+    height: auto;
+    max-height: 100px; /* max height to limit the icon */
+}
+
+        .button.clicked svg {
+            fill: currentColor;
+        }
+
+.button p, .icon-button p {
+    font-size: 5.7px; /* text is adaptable */
+    
+}
+
+        @media only screen and (hover: none) and (pointer: coarse) and (min-width: 800px) {
+            
+            .a30-container {
+                transform: scale(4);    
+            }
+            
+            .a30-display {
+                margin-left: 42.9%;
+                margin-right: 42.9%;
+                padding: 1.9% 0 1.9%;
+            }
+         }
+         
+@media only screen and (max-width: 768px){
+             .a30-container {
+                 margin-top:10%;
+                transform: scale(4.99);    
+            }
+            .page_title{
+                margin-top: 29.63%;
+            }
+            .down_arrow{
+                margin-top: 39.63%;
+            }
+          }
+          
+          /* Scorrimento da destra a sinistra */
+.slide-in-right {
+    transform: translateX(100%); /* Inizialmente spostato a destra */
+    opacity: 0; 
+    animation: slideInRight 0.5s forwards;
+}
+
+@keyframes slideInRight {
+    to {
+        transform: translateX(0); /* Riporta alla posizione originale */
+        opacity: 1;
+    }
+}
+
+/* Scorrimento dall'alto verso il basso */
+.slide-in-down {
+    transform: translateY(-100%); /* Inizialmente spostato sopra */
+    opacity: 0; 
+    animation: slideInDown 0.5s forwards;
+}
+
+@keyframes slideInDown {
+    to {
+        transform: translateY(0); /* Riporta alla posizione originale */
+        opacity: 1;
+    }
+}
+/* Scorrimento dal basso verso l'alto */
+.slide-in-up {
+    transform: translateY(100%); /* Inizialmente spostato sotto */
+    opacity: 0; 
+    animation: slideInUp 0.5s forwards;
+}
+
+@keyframes slideInUp {
+    to {
+        transform: translateY(0); /* Riporta alla posizione originale */
+        opacity: 1;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+
+<h1 class="page_title hidden slide-in-down">spruceOS</h1>
+<div class="additional-content hidden slide-in-down">
+        <p>Make the most out of your Miyoo A30</p>
+    </div>
+    
+<div class="a30-container">
+    <div class="a30_bg"></div>
+    <img src="img/miyooa30.png" class="a30_hardware"></img>
+    <div class="a30-display">
+    <img class="spruceLogo" src="img/logo.png">
+    
+    <a href="https://github.com/spruceUI/spruceOS/releases/download/spruceV2.3/spruceV2.3.0.zip" class="button hidden slide-in-up" id="downloadButton">
+        <div id="downloadIcon">
+            <!-- download icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"/>
+            </svg>
+        </div>
+        <p>Download</p>
+    </a>
+
+    <a href="https://github.com/spruceUI/Ports-and-Free-Games" class="button hidden slide-in-up" id="gamesButton">
+        <div id="gamesIcon">
+            <!-- games icon -->
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 12c.263 0 .524-.06.767-.175a2 2 0 0 0 .65-.491c.186-.21.333-.46.433-.734.1-.274.15-.568.15-.864a2.4 2.4 0 0 0 .586 1.591c.375.422.884.659 1.414.659.53 0 1.04-.237 1.414-.659A2.4 2.4 0 0 0 12 9.736a2.4 2.4 0 0 0 .586 1.591c.375.422.884.659 1.414.659.53 0 1.04-.237 1.414-.659A2.4 2.4 0 0 0 16 9.736c0 .295.052.588.152.861s.248.521.434.73a2 2 0 0 0 .649.488 1.809 1.809 0 0 0 1.53 0 2.03 2.03 0 0 0 .65-.488c.185-.209.332-.457.433-.73.1-.273.152-.566.152-.861 0-.974-1.108-3.85-1.618-5.121A.983.983 0 0 0 17.466 4H6.456a.986.986 0 0 0-.93.645C5.045 5.962 4 8.905 4 9.736c.023.59.241 1.148.611 1.567.37.418.865.667 1.389.697Zm0 0c.328 0 .651-.091.94-.266A2.1 2.1 0 0 0 7.66 11h.681a2.1 2.1 0 0 0 .718.734c.29.175.613.266.942.266.328 0 .651-.091.94-.266.29-.174.537-.427.719-.734h.681a2.1 2.1 0 0 0 .719.734c.289.175.612.266.94.266.329 0 .652-.091.942-.266.29-.174.536-.427.718-.734h.681c.183.307.43.56.719.734.29.174.613.266.941.266a1.819 1.819 0 0 0 1.06-.351M6 12a1.766 1.766 0 0 1-1.163-.476M5 12v7a1 1 0 0 0 1 1h2v-5h3v5h7a1 1 0 0 0 1-1v-7m-5 3v2h2v-2h-2Z"/>
+</svg>
+        </div>
+        <p>Games</p>
+    </a>
+
+    <a href="https://github.com/spruceUI/spruceOS/wiki" class="icon-button hidden slide-in-up" id="wikiButton">
+        <div id="wikiIcon">
+            <!--  wiki icon -->
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023"/>
+            </svg>
+        </div>
+        <p>Wiki</p>
+    </a>
+
+    <a href="https://github.com/spruceUI/spruceOS/" class="icon-button hidden slide-in-up" id="faqButton">
+        <div id="faqIcon">
+            <!--  GitHub icon -->
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.4-4.418 10.48 10.48 0 0 0 1.317-6.955 10.32 10.32 0 0 0-3.393-6.17A9.847 9.847 0 0 0 12.006 2Z"/>
+            </svg>
+        </div>
+        <p>GitHub</p>
+    </a>
+
+    </div>
+</div>
+    
+    <img src="img/spruce_logo.png" class="logo-below" alt="Spruce Logo">
+    
+<a href="#" class="learn-more-button ">▼ Learn More ▼</a>
+    
+    <script>
+        function toggleIcon(buttonId, iconId) {
+            const button = document.getElementById(buttonId);
+            const iconContainer = document.getElementById(iconId);
+            const isClicked = button.classList.toggle('clicked');
+
+            if (iconId === 'wikiIcon') {
+                iconContainer.innerHTML = isClicked ? 
+                    `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007..."/></svg>` : 
+                    `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.03v13..."/></svg>`;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.hidden');
+    
+    // Aggiungi le classi di animazione
+    elements.forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.remove('hidden');
+            element.classList.add(element.classList.contains('slide-in-right') ? 'slide-in-right' : 'slide-in-down');
+        }, index * 200); // Aggiungi un ritardo crescente per ogni elemento
+    });
+});
+    </script>
+</body>
+</html>

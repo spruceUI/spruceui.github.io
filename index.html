@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <title>SpruceOS Wiki</title>
+    
+    <!-- Meta tag Open Graph -->
+    <meta property="og:title" content="SpruceOS Wiki" />
+    <meta property="og:description" content="Welcome to the spruceOS Wiki, your guide for setting up and using spruceOS on the Miyoo A30." />
+    <meta property="og:image" content="https://github.com/user-attachments/assets/675d57a1-c318-4537-adc6-e7c2151aa175" />
+    <meta property="og:url" content="https://369px.github.io/" />
+    <meta property="og:type" content="website" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Evita lo scroll orizzontale */
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 309px; /* Larghezza della sidebar */
+            background-color: #f4f4f4;
+            padding: 50px 30px 0;
+            position: fixed;
+            height: 100%; /* Altezza al 100% per tutta la pagina */
+            overflow-y: auto;
+            transition: transform 0.3s;
+            transform: translateX(-100%); /* Nascondi inizialmente */
+            z-index: 1;
+        }
+        .sidebar.expanded {
+            transform: translateX(0); /* Mostra la sidebar */
+        }
+        .main {
+            max-width: 977px;
+            margin: 33px auto 0; /* Centra orizzontalmente il contenuto */
+            padding: 20px;
+            flex: 1;
+            transition: margin-left 0.3s;
+            box-sizing: border-box;
+        }
+        .main.expanded {
+            margin-left: 369px; /* Margine per la sidebar aperta, deve corrispondere alla larghezza della sidebar */
+        }
+        .category {
+            cursor: pointer;
+            padding-top: 15px;
+        }
+        .subcategory {
+            margin-left: 15px;
+            display: none; /* Nascondi le sottocategorie inizialmente */
+        }
+        .toggle-btn {
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 10px;
+            background-color: #f4f4f4;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            z-index: 2;
+            color: #000369;
+        }
+        .toggle-btn:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+       <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+
+ <div class="container">
+    <div class="sidebar" id="sidebar">
+        <div class="category" onclick="toggleSubcategory(event)">Home</div>
+        <div class="subcategory">
+            <div>Introduction</div>
+        </div>
+        
+        <div class="category" onclick="toggleSubcategory(event)">Adding BIOS!</div>
+        <div class="subcategory">
+            <div>BIOS Setup Guide</div>
+        </div>
+        
+        <div class="category" onclick="toggleSubcategory(event)">Adding Games!</div>
+        <div class="subcategory">
+            <div>Game Installation</div>
+        </div>
+        
+        <div class="category" onclick="toggleSubcategory(event)">Arcade and Mame Explained!</div>
+        <div class="subcategory">
+            <div>Arcade Basics</div>
+        </div>
+        
+        <div class="category" onclick="toggleSubcategory(event)">Creating a Custom Boot Logo!</div>
+        <div class="subcategory">
+            <div>Boot Logo Guide</div>
+        </div>
+        
+        <div class="category" onclick="toggleSubcategory(event)">FAQ</div>
+        <div class="subcategory">
+            <div>Frequently Asked Questions</div>
+        </div>
+        
+        <div class="category" onclick="toggleSubcategory(event)">Hardware Mods and Accessories</div>
+        <div class="subcategory">
+            <div>Modding Basics</div>
+        </div>
+        
+        <div class="category" onclick="toggleSubcategory(event)">Installation Instructions</div>
+        <div class="subcategory">
+            <div>Setup Steps</div>
+        </div>
+        
+        <div class="category" onclick="toggleSubcategory(event)">Updating Firmware and Unbricking an A30</div>
+        <div class="subcategory">
+            <div>Firmware Update Guide</div>
+        </div>
+        
+        <div class="category" onclick="toggleSubcategory(event)">Updating to the Latest Release</div>
+        <div class="subcategory">
+            <div>Update Steps</div>
+        </div>
+        
+        <div class="category" onclick="toggleSubcategory(event)">Using Apps!</div>
+        <div class="subcategory">
+            <div>App Usage Guide</div>
+        </div>
+    </div>
+</div>
+
+        <div class="main" id="main">
+            <h1>spruceOS Wiki</h1>
+            <img src="https://github.com/user-attachments/assets/675d57a1-c318-4537-adc6-e7c2151aa175" alt="Spruce Labeled" style="float: left; margin-top: 0px; margin-right: 10px; margin-bottom: 0px; max-width: 28%; height: auto;">
+            <p>Welcome to spruce, SD card overhaul for Miyoo A30</p>
+            <p>This Wiki will walk you through your first steps. It will get you up and running on the four most common operating systems. I am writing this as somebody that struggles with overly technical how-to guides. I have watched too many videos that just gloss over some very important yet basic steps that have created headaches for beginners like myself.</p>
+            <p>Most importantly, I am writing this as somebody that is new to retro-handhelds, for people that are new to them as well. I want you to succeed in getting spruce working no matter how skilled you are with computers. Please feel free to reach out to me directly for help!</p>
+            <p>Spruce is not an operating system (OS). It is a modified version of the stock Miyoo OS that cleans up bloat, optimizes performance, focuses on aesthetics and ease of use. It is intended to be sleek, intuitive and efficient.</p>
+            <h2>You will need:</h2>
+            <ul>
+                <li>A new, branded microSD card, purchased from a reputable source.</li>
+                <li>A high quality branded microSD card reader.</li>
+                <li>Download and install <a href="https://rufus.ie/en/">Rufus</a> on Windows. Rufus is super simple, popular and effective.</li>
+            </ul>
+            <hr>
+            <h2>IMPORTANT NOTE FOR PEOPLE NEW TO THE HOBBY</h2>
+            <p><strong>THROW AWAY THAT STOCK CARD!</strong></p>
+            <p><strong>ITS JUNK, THE GAMES ON IT ARE JUNK AND THE BIOS ARE JUNK!</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const main = document.getElementById('main');
+            sidebar.classList.toggle('expanded');
+            main.classList.toggle('expanded');
+        }
+
+        function toggleSubcategory(event) {
+            const subcategory = event.target.nextElementSibling;
+            if (subcategory) {
+                subcategory.style.display = subcategory.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+
+        // Aggiungi codice JavaScript per prevenire il pinch-to-zoom
+        document.addEventListener('touchmove', function(event) {
+            if (event.scale !== 1) { 
+                event.preventDefault(); 
+            }
+        }, { passive: false });
+    </script>
+    
+    <!-- Codice per prevenire pinch-to-zoom -->
+    <script>
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+</body>
+</html>
