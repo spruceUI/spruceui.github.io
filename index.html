@@ -84,8 +84,8 @@ width:auto;
     align-items: center;
     width: 80%;
     padding: 4.2% 0; /* Adjust for padding */
-    transform: scale(0.4); /* Compensate for the outer scale */
-    transform-origin: center; /* Scale from the center */
+    transform: scale(0.4); /* Compensate for outer scale */
+    transform-origin: center; /* Scale from center */
     margin-top: -5px;
 }
 
@@ -96,7 +96,7 @@ width:auto;
     left: 10px;
     right: 10px;
     bottom: -25px;
-    pointer-events: none; /* Assicura che il contenuto sottostante sia cliccabile */
+    pointer-events: none; /* Makes sure that content beneath is clickable */
     background: repeating-linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.2), 
@@ -104,12 +104,12 @@ width:auto;
         transparent 1px,
         transparent 3px
     );
-    z-index: 2; /* Posiziona l'effetto sopra il contenuto */
-    opacity: 0.5; /* Aggiusta la trasparenza */
+    z-index: 2; /* effect on top of element */
+    opacity: 0.5; /* fix transparency */
 }
 
         .button, .icon-button {
-    flex: 1 1 20%; /* Fix proportional dimensions (20% for 4 buttons) */
+    flex: 1 1 20%; /* fix proportional dimensions (20% for 4 buttons) */
     max-width: 20%;
     text-align: center;
     cursor: pointer;
@@ -121,7 +121,7 @@ width:auto;
 }
 
 .button:hover, .icon-button:hover {
-    color: #EBDBB2; /*color on hover */
+    color: #EBDBB2; /* color on hover */
 }
 
 .spruceLogo{
@@ -136,8 +136,8 @@ width:auto;
 .logo-below {
     position: absolute;
     display: block;
-    margin: 0 auto; /* Centra l'immagine */
-    width: 9%; /* Regola la dimensione dell'immagine */
+    margin: 0 auto; /* center image */
+    width: 9%; /* fix image dimension */
     bottom: 3.69%;
     left:3.69%;
     opacity:0.369;
@@ -198,43 +198,43 @@ width:auto;
             }
           }
           
-          /* Scorrimento da destra a sinistra */
+          /* scrolling animation (right to left) */
 .slide-in-right {
-    transform: translateX(100%); /* Inizialmente spostato a destra */
+    transform: translateX(100%); /* initially moved at the right */
     opacity: 0; 
     animation: slideInRight 0.5s forwards;
 }
 
 @keyframes slideInRight {
     to {
-        transform: translateX(0); /* Riporta alla posizione originale */
+        transform: translateX(0); /* resets original position */
         opacity: 1;
     }
 }
 
-/* Scorrimento dall'alto verso il basso */
+/* scrolling animation (top to bottom) */
 .slide-in-down {
-    transform: translateY(-100%); /* Inizialmente spostato sopra */
+    transform: translateY(-100%); /* initially moved to the top */
     opacity: 0; 
     animation: slideInDown 0.5s forwards;
 }
 
 @keyframes slideInDown {
     to {
-        transform: translateY(0); /* Riporta alla posizione originale */
+        transform: translateY(0); /* resets original position */
         opacity: 1;
     }
 }
-/* Scorrimento dal basso verso l'alto */
+/* scrolling animation (bottom to top) */
 .slide-in-up {
-    transform: translateY(100%); /* Inizialmente spostato sotto */
+    transform: translateY(100%); /* initially moved to the bottom */
     opacity: 0; 
     animation: slideInUp 0.5s forwards;
 }
 
 @keyframes slideInUp {
     to {
-        transform: translateY(0); /* Riporta alla posizione originale */
+        transform: translateY(0); /* resets original position */
         opacity: 1;
     }
 }
@@ -318,12 +318,12 @@ width:auto;
         document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll('.hidden');
     
-    // Aggiungi le classi di animazione
+    // add animation classes
     elements.forEach((element, index) => {
         setTimeout(() => {
             element.classList.remove('hidden');
             element.classList.add(element.classList.contains('slide-in-right') ? 'slide-in-right' : 'slide-in-down');
-        }, index * 200); // Aggiungi un ritardo crescente per ogni elemento
+        }, index * 200); // add increasing delay for each element
     });
 });
     </script>
