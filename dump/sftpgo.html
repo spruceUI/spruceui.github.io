@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFTPGo Access</title>
+</head>
+<body>
+    <h1>Access to your a30</h1>
+    <p>Input your IP to open SFTPGo:</p>
+    <input type="text" id="userIp" placeholder="X.X.X.X">
+    <button onclick="openSFTPGo()">Open SFTPGo</button>
+
+    <script>
+        function openSFTPGo() {
+            const ip = document.getElementById("userIp").value;
+            if (ip) {
+                const sftpgoUrl = `https://${ip}:8080`;  // Modidy port if necessary
+                window.open(sftpgoUrl, "_blank");
+            } else {
+                alert("Try another IP.");
+            }
+        }
+    </script>
+</body>
+</html>
