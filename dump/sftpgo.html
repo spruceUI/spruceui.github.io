@@ -16,7 +16,7 @@
             const ip = document.getElementById("userIp").value;
             if (ip) {
                 const sftpgoUrl = `https://${ip}:8080`;  // Modidy port if necessary
-                window.open(sftpgoUrl, "_blank");
+                window.location.href = sftpgoUrl;
             } else {
                 alert("Try another IP.");
             }
