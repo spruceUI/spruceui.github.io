@@ -1,3 +1,4 @@
 RELEASE_VERSION=3.0.1
 RELEASE_CHECKSUM=9e2953490a8e33b104345cfaad570382
+RELEASE_SIZE_IN_MB=281
 RELEASE_LINK=https://github.com/spruceUI/spruceOS/releases/download/spruceV3.0.1/spruceV3.0.1.7z
