@@ -3,6 +3,6 @@ NIGHTLY_CHECKSUM=4beabe405572fbb41d9c1cf66b3ab965
 NIGHTLY_SIZE_IN_MB=294
 NIGHTLY_LINK=https://github.com/spruceUI/spruceOSNightlies/releases/download/v3.1.0-20241117/spruceV3.1.0-20241117.7z
 RELEASE_VERSION=3.1.0
-RELEASE_CHECKSUM=b623a352bb41868252ce5b483be05686
+RELEASE_CHECKSUM=b5bbb933a8065804863dc66df0dae172
 RELEASE_SIZE_IN_MB=294
 RELEASE_LINK=https://github.com/spruceUI/spruceOS/releases/download/v3.1.0/spruceV3.1.0.7z
