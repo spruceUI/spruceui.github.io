@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-scroll">
 <head>
     <title>spruceOS Homepage</title>
     <meta property="og:title" content="spruceOS" />
@@ -24,11 +24,9 @@
 
        body, html {
            position: relative;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block;
     font-family: Arial, sans-serif;
     color: #EBDBB2;
      background: #282828;
@@ -37,6 +35,12 @@ background: -webkit-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 3
 background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 35%, rgba(0,0,0,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+html.no-scroll,
+body.no-scroll {
+    overflow: hidden;
 }
 
 .page_title {
@@ -198,6 +202,145 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
     color: #EBDBB2;
     text-decoration: none;
     padding: 2px;
+    border: 1px solid rgba(235, 219, 178, 0.2);
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 110px;
+    padding-left: clamp(16px, 4vw, 48px);
+    padding-right: clamp(16px, 4vw, 48px);
+}
+
+.learn-more-button:hover {
+    opacity: 0.9;
+    border-color: rgba(235, 219, 178, 0.55);
+}
+
+.learn-more-section {
+    width: 100%;
+    position: relative;
+    background: radial-gradient(circle at 20% 20%, rgba(95, 71, 35, 0.4), transparent 45%),
+                radial-gradient(circle at 80% 0%, rgba(86, 114, 64, 0.35), transparent 55%),
+                #0f0f0f;
+    overflow: hidden;
+    padding: 5rem 0;
+}
+
+.learn-more-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255,255,255,0.05) 0%, transparent 30%, transparent 70%, rgba(255,255,255,0.05) 100%);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.learn-more-wrapper {
+    width: min(95vw, 1100px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 3vw, 48px);
+}
+
+.learn-more-wrapper h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    text-align: center;
+}
+
+.lead-text {
+    font-size: clamp(16px, 2vw, 20px);
+    text-align: center;
+    line-height: 1.6;
+    color: #d5c9b8;
+}
+
+.learn-more-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(18px, 3vw, 32px);
+    width: 100%;
+}
+
+.learn-card {
+    background: rgba(12, 12, 12, 0.45);
+    border: 1px solid rgba(235, 219, 178, 0.16);
+    border-radius: 28px;
+    padding: clamp(22px, 3vw, 32px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(14px);
+    position: relative;
+    overflow: hidden;
+}
+
+.learn-card h3 {
+    font-size: clamp(20px, 2.4vw, 26px);
+    margin-bottom: 6px;
+}
+
+.learn-card p {
+    font-size: clamp(14px, 1.6vw, 17px);
+    line-height: 1.7;
+    color: #c8bbab;
+    margin-bottom: 12px;
+}
+
+.learn-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.card-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    background: linear-gradient(135deg, rgba(235, 219, 178, 0.35), rgba(235, 219, 178, 0.05));
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.08), 0 10px 25px rgba(0,0,0,0.45);
+}
+
+.join-saplings {
+    text-align: center;
+    border: 1px solid rgba(235, 219, 178, 0.2);
+    border-radius: 32px;
+    padding: clamp(32px, 5vw, 54px);
+    background: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(16px);
+}
+
+.join-saplings h2 {
+    font-size: clamp(28px, 3vw, 42px);
+    margin-bottom: 16px;
+}
+
+.join-saplings p {
+    font-size: clamp(15px, 2vw, 18px);
+    line-height: 1.7;
+    color: #d5c9b8;
+}
+
+.join-saplings a {
+    color: #9ec07c;
+    text-decoration: underline;
 }
 
 .button svg, .icon-button svg {
@@ -222,9 +365,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
          }
 
 @media only screen and (max-width: 768px){
-    body, html {
-        justify-content: flex-start;
-    }
     .page_title{
         margin-top: 16%;
     }
@@ -252,6 +392,46 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
         font-size: clamp(11px, 2.6vw, 15px);
     }
           }
+
+@media only screen and (max-width: 640px){
+    .hero {
+        min-height: 100vh;
+        padding-top: 60px;
+        padding-bottom: 120px;
+    }
+    .learn-more-wrapper {
+        gap: 36px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .learn-more-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+    .learn-card {
+        border-radius: 30px;
+        padding: 26px;
+        border-width: 1.5px;
+        box-shadow: 0 35px 65px rgba(0,0,0,0.55);
+    }
+    .learn-card h3 {
+        font-size: 22px;
+    }
+    .learn-card p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 20px;
+    }
+    .join-saplings {
+        border-radius: 36px;
+        padding: 32px 28px 40px;
+    }
+}
 
           /* scrolling animation (right to left) */
 .slide-in-right {
@@ -296,22 +476,21 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
     </style>
 </head>
-<body>
+<body class="no-scroll">
+<div class="hero">
+    <h1 class="page_title hidden slide-in-down">spruceOS</h1>
+    <div class="additional-content hidden slide-in-down">
+            <p>Make the most out of your Miyoo A30</p>
+        </div>
 
+    <div class="a30-row">
+    <div class="a30-container">
+        <div class="a30_bg"></div>
+        <img src="img/miyooa30.png" class="a30_hardware"></img>
+        <div class="a30-display">
+        <img class="spruceLogo" src="img/logo.png">
 
-<h1 class="page_title hidden slide-in-down">spruceOS</h1>
-<div class="additional-content hidden slide-in-down">
-        <p>Make the most out of your Miyoo A30</p>
-    </div>
-
-<div class="a30-row">
-<div class="a30-container">
-    <div class="a30_bg"></div>
-    <img src="img/miyooa30.png" class="a30_hardware"></img>
-    <div class="a30-display">
-    <img class="spruceLogo" src="img/logo.png">
-
-    <a href="https://github.com/spruceUI/spruceOS/releases/latest" class="button hidden slide-in-up" id="downloadButton">
+        <a href="https://github.com/spruceUI/spruceOS/releases/latest" class="button hidden slide-in-up" id="downloadButton">
         <div id="downloadIcon">
             <!-- download icon -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -319,7 +498,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
             </svg>
         </div>
         <p>Download</p>
-    </a>
+        </a>
 
     <a href="https://github.com/spruceUI/Ports-and-Free-Games" class="button hidden slide-in-up" id="gamesButton">
         <div id="gamesIcon">
@@ -357,12 +536,60 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 </div>
 
     <img src="img/spruce_logo.png" class="logo-below" alt="Spruce Logo">
-<a href="#" class="learn-more-button ">▼ Learn More ▼</a>
-<a href="https://github.com/spruceUI/spruceOS" class="github-icon-right">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12a10.001 10.001 0 006.838 9.481c.5.092.682-.217.682-.482 0-.237-.009-.867-.014-1.701-2.782.605-3.369-1.343-3.369-1.343-.454-1.154-1.11-1.46-1.11-1.46-.907-.62.069-.608.069-.608 1.002.07 1.53 1.029 1.53 1.029.891 1.528 2.34 1.087 2.91.832.091-.646.35-1.088.636-1.338-2.22-.253-4.555-1.112-4.555-4.951 0-1.093.39-1.988 1.03-2.686-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.56 9.56 0 0112 6.845c.853.004 1.71.115 2.512.337 1.91-1.295 2.75-1.025 2.75-1.025.544 1.378.202 2.397.1 2.65.64.698 1.03 1.593 1.03 2.686 0 3.847-2.337 4.695-4.565 4.942.36.31.68.923.68 1.859 0 1.342-.013 2.425-.013 2.754 0 .267.18.578.688.48A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"/>
-    </svg>
-</a>
+    <a href="#" class="learn-more-button">▼ Learn More ▼</a>
+    <a href="https://github.com/spruceUI/spruceOS" class="github-icon-right">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12a10.001 10.001 0 006.838 9.481c.5.092.682-.217.682-.482 0-.237-.009-.867-.014-1.701-2.782.605-3.369-1.343-3.369-1.343-.454-1.154-1.11-1.46-1.11-1.46-.907-.62.069-.608.069-.608 1.002.07 1.53 1.029 1.53 1.029.891 1.528 2.34 1.087 2.91.832.091-.646.35-1.088.636-1.338-2.22-.253-4.555-1.112-4.555-4.951 0-1.093.39-1.988 1.03-2.686-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.56 9.56 0 0112 6.845c.853.004 1.71.115 2.512.337 1.91-1.295 2.75-1.025 2.75-1.025.544 1.378.202 2.397.1 2.65.64.698 1.03 1.593 1.03 2.686 0 3.847-2.337 4.695-4.565 4.942.36.31.68.923.68 1.859 0 1.342-.013 2.425-.013 2.754 0 .267.18.578.688.48A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"/>
+        </svg>
+    </a>
+</div>
+
+<main id="learn-more-content" class="learn-more-section">
+    <div class="learn-more-wrapper">
+        <h2>What is spruceUl</h2>
+        <p class="lead-text">SpruceUI is our pledge to craft the most trusted custom firmware experience, taking every handheld from curiosity to legend with obsessive tuning, long-haul stability, and the kind of detail work that keeps collectors talking.</p>
+        <div class="learn-more-grid">
+            <article class="learn-card">
+                <div class="card-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#EBDBB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="4" width="16" height="10" rx="2"></rect>
+                        <path d="M8 18h8M10 21h4"></path>
+                    </svg>
+                </div>
+                <h3>Miyoo Core Builds</h3>
+                <p>SpruceUI began by rewiring the Miyoo a30 firmware from the boot stack up, blending official stability with Miyoo a30 custom firmware flourishes so a pocket console feels intentionally crafted rather than hastily modded, even when you drop a fresh Miyoo a30 cfw profile on top.</p>
+                <p>Long-form release notes walk through each Miyoo a30 firmware download, highlight when a Miyoo a30 update firmware step is optional, and flag any Miyoo custom firmware edge cases so you can script upgrades once and share them across the entire shelf without repeating work.</p>
+            </article>
+            <article class="learn-card">
+                <div class="card-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#EBDBB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 3h10l4 5v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8l4-5z"></path>
+                        <path d="M12 11v6m0 0-3-3m3 3 3-3"></path>
+                    </svg>
+                </div>
+                <h3>Miyoo Flip Lab</h3>
+                <p>The lab side obsesses over every Miyoo flip os quirk, moving from the playful Miyoo flip cow persona to latency-friendly Miyoo flip firmware tuning so docked play, tabletop play, and lap play all feel equally polished.</p>
+                <p>Weekly build notes outline what changed inside each Miyoo flip custom firmware sprint, link the preferred Miyoo flip firmware download mirrors, and explain when a Miyoo flip firmware update is worth a clean flash versus a quick patch.</p>
+                <p>Forward-looking branches keep tabs on Miyoo flip v2 firmware drops, the pocket-sized Miyoo mini flip v2 custom firmware scene, and the benchmarking data that crowns the best firmware for Miyoo flip whenever a new challenger appears.</p>
+            </article>
+            <article class="learn-card">
+                <div class="card-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#EBDBB2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3l8 4v6c0 4-3 7-8 8-5-1-8-4-8-8V7l8-4z"></path>
+                        <path d="M9 10l3 3 4-4"></path>
+                    </svg>
+                </div>
+                <h3>Trimui Tribe</h3>
+                <p>Trimui players get the same finish: Trimui smart pro firmware releases balance the stock feel with thoughtful touches, while dedicated trims of Trimui smart pro custom firmware keep theme artists and speed runners operating from the same polished base.</p>
+                <p>Deep-dive changelogs cover every Trimui smart pro firmware update, list Trimui custom firmware load-outs by playstyle, and include recovery kits so a risky Trimui brick firmware experiment or Trimui brick custom firmware theme can be rolled back with a calm Trimui brick firmware update checklist.</p>
+            </article>
+        </div>
+        <section class="join-saplings">
+            <h2>Join the Saplings!</h2>
+            <p>This is our little love message: every download is a new tree ring, and every new friend makes the forest louder. Jump into the <a href="https://discord.gg/28pBG78w9" target="_blank" rel="noopener">Discord grove</a> to swap builds, trade stickers, and cheer on fellow modders.</p>
+        </section>
+    </div>
+</main>
 
     <script>
         function toggleIcon(buttonId, iconId) {
@@ -377,7 +604,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
             }
         }
 
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
     const elements = document.querySelectorAll('.hidden');
 
     // add animation classes
@@ -387,6 +619,22 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
             element.classList.add(element.classList.contains('slide-in-right') ? 'slide-in-right' : 'slide-in-down');
         }, index * 200); // add increasing delay for each element
     });
+
+    const learnMoreButton = document.querySelector('.learn-more-button');
+    const learnMoreSection = document.getElementById('learn-more-content');
+    const htmlElement = document.documentElement;
+
+    if (learnMoreButton && learnMoreSection) {
+        learnMoreButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            document.body.classList.remove('no-scroll');
+            htmlElement.classList.remove('no-scroll');
+
+            requestAnimationFrame(() => {
+                learnMoreSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    }
 });
     </script>
 </body>
