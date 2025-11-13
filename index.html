@@ -25,17 +25,17 @@
        body, html {
            position: relative;
     height: 100%;
-    width: 100%; 
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: Arial, sans-serif;
-    color: #EBDBB2; 
+    color: #EBDBB2;
      background: #282828;
 background: -moz-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 35%, rgba(0,0,0,1) 100%);
 background: -webkit-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 35%, rgba(0,0,0,1) 100%);
 background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 35%, rgba(0,0,0,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1); 
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
     overflow-x: hidden;
 }
 
@@ -56,101 +56,105 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .a30-row {
     position: relative;
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: center;
     align-items: center;
-    height: auto;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    transform: scale(7.69);
-    transform-origin: top center; /* Set scale from the top center */
-    margin-top: 4%; /* Remove any extra margins */
+    width: min(92vw, 1100px);
+    margin: 4% auto 0;
+    padding: 0 1.5rem;
 }
 
 .a30-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto; /* Imposta la larghezza in base ai contenuti */
-    max-width: 100%; /* Non superare la larghezza dello schermo */
-    margin: 0 auto; /* Centra il contenitore */
-    overflow: hidden;
-    
-    min-width: 0;
+    position: relative;
+    width: 100%;
 }
 
 .a30_bg{
-position:absolute;
-    width:28%;
-    height:84%;
-    background-color:#282828;
+    position:absolute;
+    inset: 18% 14%;
+    border-radius: 12px;
+    background-color:#1d1d1d;
+    filter: blur(20px);
+    opacity: 0.5;
+    z-index: 0;
 }
 
 
 .a30_hardware{
-position:absolute;
-width:auto;
-    height:100%;
+    display:block;
+    width:100%;
+    height:auto;
+    position: relative;
+    z-index: 1;
 }
 
 
 .a30-display {
-    position:relative;
+    position:absolute;
+    top: 13.7%;
+    left: 27.8%;
+    width: 44.8%;
+    height: 74.3%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 80%;
-    padding: 4.2% 0; /* Adjust for padding */
-    transform: scale(0.4); /* Compensate for outer scale */
-    transform-origin: center; /* Scale from center */
-    margin-top: -5px;
-    align-self: flex-start;
-    left: 17.3px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: clamp(8px, 1.4vw, 18px);
+    padding: clamp(10px, 2vw, 26px);
+    z-index: 2;
 }
 
 .a30-display::before {
     content: "";
     position: absolute;
-    top: -10px;
-    left: 10px;
-    right: 10px;
-    bottom: -25px;
+    inset: 0;
+    border-radius: 8px;
     pointer-events: none; /* Makes sure that content beneath is clickable */
     background: repeating-linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.2), 
+        rgba(0, 0, 0, 0.2),
         rgba(0, 0, 0, 0.2) 1px,
         transparent 1px,
         transparent 3px
     );
-    z-index: 2; /* effect on top of element */
+    z-index: 0; /* effect sits beneath interactive elements */
     opacity: 0.369; /* fix transparency */
 }
 
-        .button, .icon-button {
-    flex: 1 1 20%; /* fix proportional dimensions (20% for 4 buttons) */
-    max-width: 20%;
-    text-align: center;
+.a30-display > * {
+    position: relative;
+    z-index: 1;
+}
+
+.button, .icon-button {
+    flex: 1 1 25%;
+    min-width: 0;
     cursor: pointer;
     box-sizing: border-box;
     text-decoration: none;
-    height: 39px;
-    padding-top: 6.9px;
-    color: #7c6f64;
+    color: #b0a89f;
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 8px;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .button:hover, .icon-button:hover {
     color: #EBDBB2; /* color on hover */
+    transform: translateY(-2px);
 }
 
 .spruceLogo{
     position:absolute;
-    opacity: 30%;
-    width:10px;
-    padding: 2px 0 0 1.5px;
-    margin-left: -108px;
-    margin-top: -17px;
+    opacity: 0.3;
+    width: 9%;
+    min-width: 32px;
+    top: 8%;
+    left: 6%;
 }
 
 .logo-below {
@@ -196,10 +200,9 @@ width:auto;
     padding: 2px;
 }
 
-        .button svg, .icon-button svg {
-    width: 100%;
-    height: auto;
-    max-height: 100px; /* max height to limit the icon */
+.button svg, .icon-button svg {
+    width: clamp(42px, 4.6vw, 64px);
+    height: clamp(42px, 4.6vw, 64px);
 }
 
         .button.clicked svg {
@@ -207,43 +210,53 @@ width:auto;
         }
 
 .button p, .icon-button p {
-    font-size: 5.7px; /* text is adaptable */
-    
+    font-size: clamp(11px, 1.2vw, 15px);
+    letter-spacing: 0.5px;
 }
 
         @media only screen and (hover: none) and (pointer: coarse) and (min-width: 800px) {
-            
+
             .a30-row {
-                transform: scale(4);    
-            }
-            
-            .a30-display {
-                margin-left: 42.9%;
-                margin-right: 42.9%;
-                padding: 1.9% 0 1.9%;
+                width: min(96vw, 860px);
             }
          }
-         
+
 @media only screen and (max-width: 768px){
-             .a30-row {
-                 margin-top:10%;
-                transform: scale(3.69);    
-            }
-            .page_title{
-                margin-top: 29.63%;
-            }
-            .down_arrow{
-                margin-top: 39.63%;
-            }
-            .button, .icon-button {
-        flex: 1 1 30%; /* Make buttons smaller */
+    body, html {
+        justify-content: flex-start;
+    }
+    .page_title{
+        margin-top: 16%;
+    }
+    .additional-content{
+        font-size: 16px;
+    }
+    .a30-row {
+        width: 160vw;
+        margin-top: 12%;
+        margin-left: -30vw;
+        padding: 0;
+    }
+    .a30-container{
+        overflow: visible;
+    }
+    .a30-display{
+        padding: clamp(18px, 5vw, 36px);
+        gap: clamp(12px, 4vw, 28px);
+    }
+    .button svg, .icon-button svg {
+        width: clamp(52px, 12vw, 78px);
+        height: clamp(52px, 12vw, 78px);
+    }
+    .button p, .icon-button p {
+        font-size: clamp(11px, 2.6vw, 15px);
     }
           }
-          
+
           /* scrolling animation (right to left) */
 .slide-in-right {
     transform: translateX(100%); /* initially moved at the right */
-    opacity: 0; 
+    opacity: 0;
     animation: slideInRight 0.5s forwards;
 }
 
@@ -257,7 +270,7 @@ width:auto;
 /* scrolling animation (top to bottom) */
 .slide-in-down {
     transform: translateY(-100%); /* initially moved to the top */
-    opacity: 0; 
+    opacity: 0;
     animation: slideInDown 0.5s forwards;
 }
 
@@ -270,7 +283,7 @@ width:auto;
 /* scrolling animation (bottom to top) */
 .slide-in-up {
     transform: translateY(100%); /* initially moved to the bottom */
-    opacity: 0; 
+    opacity: 0;
     animation: slideInUp 0.5s forwards;
 }
 
@@ -290,14 +303,14 @@ width:auto;
 <div class="additional-content hidden slide-in-down">
         <p>Make the most out of your Miyoo A30</p>
     </div>
-    
+
 <div class="a30-row">
 <div class="a30-container">
     <div class="a30_bg"></div>
     <img src="img/miyooa30.png" class="a30_hardware"></img>
     <div class="a30-display">
     <img class="spruceLogo" src="img/logo.png">
-    
+
     <a href="https://github.com/spruceUI/spruceOS/releases/latest" class="button hidden slide-in-up" id="downloadButton">
         <div id="downloadIcon">
             <!-- download icon -->
@@ -328,7 +341,7 @@ width:auto;
         </div>
         <p>Wiki</p>
     </a>
-    
+
        <a href="https://github.com/spruceUI/spruceOS/" class="icon-button hidden slide-in-up" id="faqButton">
         <div id="faqIcon">
             <!--  GitHub icon -->
@@ -342,7 +355,7 @@ width:auto;
     </div>
 </div>
 </div>
-    
+
     <img src="img/spruce_logo.png" class="logo-below" alt="Spruce Logo">
 <a href="#" class="learn-more-button ">▼ Learn More ▼</a>
 <a href="https://github.com/spruceUI/spruceOS" class="github-icon-right">
@@ -358,15 +371,15 @@ width:auto;
             const isClicked = button.classList.toggle('clicked');
 
             if (iconId === 'wikiIcon') {
-                iconContainer.innerHTML = isClicked ? 
-                    `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007..."/></svg>` : 
+                iconContainer.innerHTML = isClicked ?
+                    `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M11 4.717c-2.286-.58-4.16-.756-7.045-.71A1.99 1.99 0 0 0 2 6v11c0 1.133.934 2.022 2.044 2.007..."/></svg>` :
                     `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.03v13..."/></svg>`;
             }
         }
-        
+
         document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll('.hidden');
-    
+
     // add animation classes
     elements.forEach((element, index) => {
         setTimeout(() => {
