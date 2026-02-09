@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, sans-serif;
+        font-family: NunWen, sans-serif;
     color: #EBDBB2;
      background: #282828;
 background: -moz-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 35%, rgba(0,0,0,1) 100%);
@@ -37,6 +37,13 @@ background: -webkit-radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 3
 background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 35%, rgba(0,0,0,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
     overflow-x: hidden;
+}
+
+@font-face {
+	font-family: 'NunWen';
+	src: url('fonts/nunwen.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 .page_title {
@@ -81,19 +88,20 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 .a30_hardware{
     display:block;
-    width:100%;
+    width:42%;
     height:auto;
     position: relative;
+	left: 28.8%;
     z-index: 1;
 }
 
 
 .a30-display {
     position:absolute;
-    top: 13.7%;
-    left: 27.8%;
-    width: 44.8%;
-    height: 74.3%;
+    top: 0%;
+    left: 29.9%;
+    width: 40%;
+    height: 52.2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -118,6 +126,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
     );
     z-index: 0; /* effect sits beneath interactive elements */
     opacity: 0.369; /* fix transparency */
+    opacity: 1; /* fix transparency */
 }
 
 .a30-display > * {
@@ -153,7 +162,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
     opacity: 0.3;
     width: 9%;
     min-width: 32px;
-    top: 8%;
+    top: 12%;
     left: 6%;
 }
 
@@ -191,13 +200,14 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
     border-radius: 3.69px;
     opacity:0.639;
     position: absolute;
-    bottom: 3.69%;
+    bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 18px;
     color: #EBDBB2;
     text-decoration: none;
     padding: 2px;
+	z-index: 2;
 }
 
 .button svg, .icon-button svg {
@@ -301,13 +311,13 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 <h1 class="page_title hidden slide-in-down">spruceOS</h1>
 <div class="additional-content hidden slide-in-down">
-        <p>Make the most out of your Miyoo A30</p>
+        <p>Make the most out of your Miyoo and Trimui devices</p>
     </div>
 
 <div class="a30-row">
 <div class="a30-container">
     <div class="a30_bg"></div>
-    <img src="img/miyooa30.png" class="a30_hardware"></img>
+    <img src="img/brickhammer.png" class="a30_hardware"></img>
     <div class="a30-display">
     <img class="spruceLogo" src="img/logo.png">
 
